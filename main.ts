@@ -698,7 +698,7 @@ basic.forever(function () {
 })
 basic.forever(function () {
     répété_indéfinimen = 999
-    basic.showString("SOS v4")
+    basic.showString("SOS v4,5")
     music.playMelody("C F C5 - - - - - ", 120)
     basic.pause(100)
     basic.showString("menu : A+B")
