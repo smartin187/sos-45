@@ -874,15 +874,31 @@ basic.forever(function () {
                     }
                 }
                 basic.showString("4 : carte/bousole")
-                for (let index = 0; index < 20; index++) {
+                liste_des_aplication = 20
+                while (liste_des_aplication == 0) {
                     if (input.buttonIsPressed(Button.A)) {
                         carte()
                     }
                 }
                 basic.showString("5 : météo")
-                for (let index = 0; index < 20; index++) {
+                liste_des_aplication = 20
+                while (liste_des_aplication == 0) {
                     if (input.buttonIsPressed(Button.A)) {
                         météo()
+                    }
+                }
+                basic.showString("6 : mesage")
+                liste_des_aplication = 20
+                while (liste_des_aplication == 0) {
+                    if (input.buttonIsPressed(Button.A)) {
+                        mésage()
+                    }
+                }
+                basic.showString("7 : text")
+                liste_des_aplication = 20
+                while (liste_des_aplication == 0) {
+                    if (input.buttonIsPressed(Button.A)) {
+                        texte()
                     }
                 }
             }
