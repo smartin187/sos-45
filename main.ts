@@ -11,6 +11,7 @@ let _2 = 0
 let _3 = 0
 let _4 = 0
 let t1 = 0
+let liste_des_aplication = 0
 function météo () {
     basic.showLeds(`
         # . . . .
@@ -804,106 +805,115 @@ basic.forever(function () {
                 }
             }
         }
-        if (input.buttonIsPressed(Button.AB)) {
-            basic.showLeds(`
-                # # . # #
-                . # . . .
-                . # . # .
-                . . . # #
-                . . . # .
-                `)
-            for (let index = 0; index < répété_indéfinimen; index++) {
-                if (input.buttonIsPressed(Button.A)) {
-                    basic.showLeds(`
-                        . # # . .
-                        . . . # .
-                        . . # . .
-                        . . . . .
-                        . . # . .
-                        `)
-                    basic.pause(200)
-                    basic.showString("aide :")
-                    basic.showString("au démarage, fait votre code : A ajoute 1 au code B soustré 1")
-                    basic.showString("une foit conécté, vous aver 2 coase séparer de \"/\"")
-                    basic.showString("sur chaque casse, il y a soi un dossier ou une aplication")
-                    basic.showString("(dossier):")
-                    basic.showLeds(`
-                        . . . . .
-                        . . . . .
-                        . # # . .
-                        . # # # .
-                        . . . . .
-                        `)
-                    basic.pause(500)
-                    basic.showString("faite A ou B pour ouvrire.      dans un dissier il y aura aussi ca")
-                    basic.showString("il peu aissi y avoire dans une casse celecuchosse mais den l'autre rien")
-                }
-                if (input.buttonIsPressed(Button.B)) {
-                    basic.showString("liste des aplication")
-                    basic.showLeds(`
-                        . . . # .
-                        . # # # .
-                        . . # # .
-                        . . . # .
-                        . # # # .
-                        `)
-                    basic.pause(500)
-                    basic.showString("1 : tauro-video")
-                    for (let index = 0; index < 20; index++) {
-                        if (input.buttonIsPressed(Button.A)) {
-                            torau_video()
-                        }
-                    }
-                    basic.showString("2 : foto/video")
-                    for (let index = 0; index < 20; index++) {
-                        if (input.buttonIsPressed(Button.A)) {
-                            fotovideo()
-                        }
-                    }
-                    basic.showString("3 : pile ou face")
-                    for (let index = 0; index < 20; index++) {
-                        if (input.buttonIsPressed(Button.A)) {
-                            pile_ou_fase()
-                        }
-                    }
-                    basic.showString("4 : carte/bousole")
-                    for (let index = 0; index < 20; index++) {
-                        if (input.buttonIsPressed(Button.A)) {
-                            carte()
-                        }
-                    }
-                    basic.showString("5 : météo")
-                    for (let index = 0; index < 20; index++) {
-                        if (input.buttonIsPressed(Button.A)) {
-                            météo()
-                        }
+    }
+})
+basic.forever(function () {
+    if (input.buttonIsPressed(Button.AB)) {
+        basic.showLeds(`
+            # # . # #
+            . # . . .
+            . # . # .
+            . . . # #
+            . . . # .
+            `)
+        for (let index = 0; index < répété_indéfinimen; index++) {
+            if (input.buttonIsPressed(Button.A)) {
+                basic.showLeds(`
+                    . # # . .
+                    . . . # .
+                    . . # . .
+                    . . . . .
+                    . . # . .
+                    `)
+                basic.pause(200)
+                basic.showString("aide :")
+                basic.showString("au démarage, fait votre code : A ajoute 1 au code B soustré 1")
+                basic.showString("une foit conécté, vous aver 2 coase séparer de \"/\"")
+                basic.showString("sur chaque casse, il y a soi un dossier ou une aplication")
+                basic.showString("(dossier):")
+                basic.showLeds(`
+                    . . . . .
+                    . . . . .
+                    . # # . .
+                    . # # # .
+                    . . . . .
+                    `)
+                basic.pause(500)
+                basic.showString("faite A ou B pour ouvrire.      dans un dissier il y aura aussi ca")
+                basic.showString("il peu aissi y avoire dans une casse celecuchosse mais den l'autre rien")
+            }
+            if (input.buttonIsPressed(Button.B)) {
+                basic.showString("liste des aplication")
+                basic.showLeds(`
+                    . . . # .
+                    . # # # .
+                    . . # # .
+                    . . . # .
+                    . # # # .
+                    `)
+                basic.pause(500)
+                basic.showString("1 : tauro-video")
+                liste_des_aplication = 20
+                while (liste_des_aplication == 0) {
+                    if (input.buttonIsPressed(Button.A)) {
+                        torau_video()
                     }
                 }
-                if (input.buttonIsPressed(Button.AB)) {
-                    basic.showString("teste des périférique")
-                    basic.showLeds(`
-                        . . # # .
-                        . . # . .
-                        . . # . #
-                        . # . # .
-                        . . # . .
-                        `)
-                    basic.pause(500)
-                    basic.showString("1 : auparleur :")
-                    music.playMelody("C D E F G A B C5 ", 120)
-                    basic.showString("2 : température")
-                    basic.showNumber(input.temperature())
-                    basic.pause(1000)
-                    basic.showString("3 : luminausiter")
-                    basic.showNumber(input.lightLevel())
-                    basic.pause(1000)
-                    basic.showString("4 : mouveman")
-                    while (input.isGesture(Gesture.Shake)) {
-                        basic.showString("secoué")
+                basic.showString("2 : foto/video")
+                liste_des_aplication = 20
+                while (liste_des_aplication == 0) {
+                    if (input.buttonIsPressed(Button.A)) {
+                        fotovideo()
                     }
-                    basic.showString("OK")
                 }
+                basic.showString("3 : pile ou face")
+                liste_des_aplication = 20
+                while (0 == liste_des_aplication) {
+                    if (input.buttonIsPressed(Button.A)) {
+                        pile_ou_fase()
+                    }
+                }
+                basic.showString("4 : carte/bousole")
+                for (let index = 0; index < 20; index++) {
+                    if (input.buttonIsPressed(Button.A)) {
+                        carte()
+                    }
+                }
+                basic.showString("5 : météo")
+                for (let index = 0; index < 20; index++) {
+                    if (input.buttonIsPressed(Button.A)) {
+                        météo()
+                    }
+                }
+            }
+            if (input.buttonIsPressed(Button.AB)) {
+                basic.showString("teste des périférique")
+                basic.showLeds(`
+                    . . # # .
+                    . . # . .
+                    . . # . #
+                    . # . # .
+                    . . # . .
+                    `)
+                basic.pause(500)
+                basic.showString("1 : auparleur :")
+                music.playMelody("C D E F G A B C5 ", 120)
+                basic.showString("2 : température")
+                basic.showNumber(input.temperature())
+                basic.pause(1000)
+                basic.showString("3 : luminausiter")
+                basic.showNumber(input.lightLevel())
+                basic.pause(1000)
+                basic.showString("4 : mouveman")
+                while (input.isGesture(Gesture.Shake)) {
+                    basic.showString("secoué")
+                }
+                basic.showString("OK")
             }
         }
     }
+})
+basic.forever(function () {
+    basic.pause(100)
+    liste_des_aplication += -1
 })
