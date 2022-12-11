@@ -226,6 +226,14 @@ function torau_video () {
     }
 }
 function pile_ou_fase () {
+    music.playMelody("F - - - - - - - ", 120)
+    basic.showLeds(`
+        . . # . .
+        . # . . .
+        # # . . #
+        . # . # .
+        . . # . .
+        `)
     for (let index = 0; index < répété_indéfinimen; index++) {
         basic.showString("appuier sur A")
         if (input.buttonIsPressed(Button.A)) {
@@ -517,6 +525,13 @@ function mésage () {
 }
 function fotovideo () {
     music.playMelody("C5 - - - - - - - ", 120)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        # # # # .
+        # . # # .
+        # # # # .
+        `)
     for (let index = 0; index < répété_indéfinimen; index++) {
         if (input.buttonIsPressed(Button.A)) {
             music.playMelody("C5 - - - - - - - ", 120)
@@ -698,8 +713,8 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    répété_indéfinimen = 999
-    basic.showString("SOS v4,5")
+    répété_indéfinimen = 9999
+    basic.showString("SOS v5")
     music.playMelody("C F C5 - - - - - ", 120)
     basic.pause(100)
     basic.showString("menu : A+B")
@@ -855,6 +870,13 @@ basic.forever(function () {
                 basic.showString("1 : tauro-video")
                 liste_des_aplication = 20
                 while (liste_des_aplication == 0) {
+                    basic.showLeds(`
+                        . . . . .
+                        . # . # .
+                        . # # # .
+                        . . # . .
+                        . . . . .
+                        `)
                     if (input.buttonIsPressed(Button.A)) {
                         torau_video()
                     }
@@ -862,6 +884,13 @@ basic.forever(function () {
                 basic.showString("2 : foto/video")
                 liste_des_aplication = 20
                 while (liste_des_aplication == 0) {
+                    basic.showLeds(`
+                        . . . . .
+                        . . . . .
+                        # # # # .
+                        # . # # .
+                        # # # # .
+                        `)
                     if (input.buttonIsPressed(Button.A)) {
                         fotovideo()
                     }
@@ -869,36 +898,27 @@ basic.forever(function () {
                 basic.showString("3 : pile ou face")
                 liste_des_aplication = 20
                 while (0 == liste_des_aplication) {
+                    basic.showLeds(`
+                        . . # . .
+                        . # . . .
+                        # # . . #
+                        . # . # .
+                        . . # . .
+                        `)
                     if (input.buttonIsPressed(Button.A)) {
                         pile_ou_fase()
                     }
                 }
                 basic.showString("4 : carte/bousole")
-                liste_des_aplication = 20
-                while (liste_des_aplication == 0) {
+                for (let index = 0; index < 20; index++) {
                     if (input.buttonIsPressed(Button.A)) {
                         carte()
                     }
                 }
                 basic.showString("5 : météo")
-                liste_des_aplication = 20
-                while (liste_des_aplication == 0) {
+                for (let index = 0; index < 20; index++) {
                     if (input.buttonIsPressed(Button.A)) {
                         météo()
-                    }
-                }
-                basic.showString("6 : mesage")
-                liste_des_aplication = 20
-                while (liste_des_aplication == 0) {
-                    if (input.buttonIsPressed(Button.A)) {
-                        mésage()
-                    }
-                }
-                basic.showString("7 : text")
-                liste_des_aplication = 20
-                while (liste_des_aplication == 0) {
-                    if (input.buttonIsPressed(Button.A)) {
-                        texte()
                     }
                 }
             }
