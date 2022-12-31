@@ -669,6 +669,9 @@ function fotovideo () {
         }
     }
 }
+function générateur_automatique_limage () {
+	
+}
 function texte () {
     basic.showLeds(`
         . # # # .
@@ -741,9 +744,9 @@ basic.forever(function () {
                 basic.showLeds(`
                     # # . . #
                     # # # # .
-                    . . # # #
-                    . # . # #
-                    # . . # .
+                    . . # . .
+                    . # # # .
+                    # . # # #
                     `)
                 if (input.buttonIsPressed(Button.A)) {
                     basic.showLeds(`
@@ -771,7 +774,24 @@ basic.forever(function () {
                     }
                 }
                 if (input.buttonIsPressed(Button.B)) {
-                    pile_ou_fase()
+                    basic.showLeds(`
+                        # # . . .
+                        # # # # .
+                        # # . # .
+                        # # # # .
+                        . . . . .
+                        `)
+                    basic.pause(1000)
+                    basic.showLeds(`
+                        # # . . #
+                        # # . # .
+                        # . # # #
+                        . # # # #
+                        # . # # #
+                        `)
+                    for (let index = 0; index < 4; index++) {
+                    	
+                    }
                 }
             }
         }
@@ -915,20 +935,27 @@ basic.forever(function () {
                 basic.showString("4 : carte/bousole")
                 liste_des_aplication = 20
                 while (liste_des_aplication == 0) {
+                    basic.showLeds(`
+                        . . . . .
+                        # . . # .
+                        # # . # .
+                        # . # # .
+                        # . . # .
+                        `)
                     if (input.buttonIsPressed(Button.A)) {
-                        basic.showLeds(`
-                            . . . . .
-                            # . . # .
-                            # # . # .
-                            # . # # .
-                            # . . # .
-                            `)
                         carte()
                     }
                 }
                 basic.showString("5 : météo")
                 liste_des_aplication = 20
                 while (liste_des_aplication == 0) {
+                    basic.showLeds(`
+                        . . . . .
+                        . # . . #
+                        # # # . .
+                        # # # # .
+                        . . . . .
+                        `)
                     if (input.buttonIsPressed(Button.A)) {
                         météo()
                     }
@@ -936,6 +963,13 @@ basic.forever(function () {
                 basic.showString("6 : message")
                 liste_des_aplication = 20
                 while (liste_des_aplication == 0) {
+                    basic.showLeds(`
+                        . . . . .
+                        . . # . .
+                        . # . # .
+                        # # . # #
+                        # # . # #
+                        `)
                     if (input.buttonIsPressed(Button.A)) {
                         mésage()
                     }
@@ -943,6 +977,13 @@ basic.forever(function () {
                 basic.showString("7 : text")
                 liste_des_aplication = 20
                 while (liste_des_aplication == 0) {
+                    basic.showLeds(`
+                        . . . . .
+                        . # # # .
+                        . . # . .
+                        . . # . .
+                        . . . . .
+                        `)
                     if (input.buttonIsPressed(Button.A)) {
                         texte()
                     }
