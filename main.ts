@@ -6,6 +6,8 @@ let m2 = 0
 let m3 = 0
 let radio_filere = 0
 let mésage_resu_sur_la_radio_ou_p1 = 0
+let Y_générateur_automatique_de_terin = 0
+let X_générateur_automatique_de_terin = 0
 let _1 = 0
 let _2 = 0
 let _3 = 0
@@ -543,7 +545,8 @@ function générateur_automatique_dimage () {
         `)
     for (let index = 0; index < répété_indéfinimen; index++) {
         if (input.buttonIsPressed(Button.A)) {
-            let Y_générateur_automatique_de_terin = 0
+            Y_générateur_automatique_de_terin = 0
+            X_générateur_automatique_de_terin = 0
             basic.showLeds(`
                 . . . . .
                 . . . . .
@@ -552,8 +555,12 @@ function générateur_automatique_dimage () {
                 . . . . .
                 `)
             while (Y_générateur_automatique_de_terin == 5) {
+                X_générateur_automatique_de_terin += 1
+                if (X_générateur_automatique_de_terin == 5) {
+                    Y_générateur_automatique_de_terin += 1
+                    X_générateur_automatique_de_terin = 0
+                }
                 if (randint(1, 2) == 1) {
-                    let X_générateur_automatique_de_terin = 0
                     led.plot(X_générateur_automatique_de_terin, Y_générateur_automatique_de_terin)
                 }
             }
@@ -585,7 +592,7 @@ function fotovideo () {
                     basic.showLeds(`
                         # # # # #
                         # # # # #
-                        # # # # #
+                        # # . # #
                         # # # # #
                         # # # # #
                         `)
